@@ -10,8 +10,11 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::controller('soap', 'SoapController');
+
 Route::get('/', function()
 {
-	return View::make('hello');
+    return View::make('hello');
 });
+
+Route::any('servidor', 'SoapController@getServidor');
+Route::any('cliente', 'SoapController@getCliente');
